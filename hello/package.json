@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -d scripts --watch",
+    "build": "webpack --watch",
+    "build-babel": "babel src -d scripts --watch",
+    "serve": "live-server public --delay=10",
     "clear.watch": "echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "live-server": "^1.2.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "webpack": "^3.10.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

@@ -7,7 +7,6 @@
  ```
  npm install --save react react-dom
  npm install --save-dev babel-cli babel-preset-react babel-preset-env
- npm install -g live-server
 
  ```
 
