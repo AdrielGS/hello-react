@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Boxes from './boxes'
+import Boxes from './boxes';
+import Button from './button';
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -10,8 +11,8 @@ export default class Index extends React.Component {
       count: 0
     };
   }
-  shuffle = () => {
 
+  shuffle = () => {
     let index = Math.floor(Math.random() * 3);
     let players = [true, true, true];
     players[index] = false;
@@ -24,17 +25,16 @@ export default class Index extends React.Component {
   render() {
     return (
       <View>
-        <View style = {styles.outerContainer}>
+        <View style = {styles.container}>
           {this.state.players.map((player, index) => {
               return <Boxes key = {index} winner = {player}/>   
           })}
         </View>
-        <View style = {styles.container}>
-          <TouchableOpacity style = {styles.button} onPress = {this.shuffle}>
-            <Text style = {styles.label}> LET'S PLAY !!! </Text>
-            <Text style = {styles.label}> {this.state.count} </Text>
-          </TouchableOpacity>      
-        </View>
+        <Button 
+          onPress = {this.shuffle} 
+          label = "LET'S PLAY !!" 
+          count = {this.state.count}
+        />
       </View>
     );
   }
@@ -43,24 +43,9 @@ export default class Index extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 300,
-  },
-  outerContainer: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 50,
     marginHorizontal: 20
-  },
-  button: {
-    backgroundColor: 'black',
-    padding: 50,
-    alignItems: 'center'
-  },
-  label: {
-    color: 'white'
   }
 });
