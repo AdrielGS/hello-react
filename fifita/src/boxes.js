@@ -1,8 +1,14 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
-const Boxes = ({winner}) => {
-  return <View style = {[styles.boxes, winner ? styles.winner: '' ]} />;
+const Boxes = ({winner, name}) => {
+  // return <View style = {[styles.boxes, winner ? styles.winner: '' ]} />;
+
+  return (
+    <View style = {[styles.boxes, winner ? styles.winner: '' ]} >
+      <Text style = {styles.name}> {name} </Text>
+    </View>
+  )
 
 }
 
@@ -15,7 +21,15 @@ const styles = StyleSheet.create({
 	},
 	winner: {
 		backgroundColor: '#01C30C'    
-}
+  },
+  name: {
+    flex: 1,
+    padding: 10,
+    top: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'white'
+  }
 
 });
 

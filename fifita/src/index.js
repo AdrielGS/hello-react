@@ -7,6 +7,7 @@ export default class Index extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      names: ['Adriel', 'Icaro', 'Luis'],
       players: [false, false, false],
       count: 0
     };
@@ -27,13 +28,13 @@ export default class Index extends React.Component {
       <View>
         <View style = {styles.container}>
           {this.state.players.map((player, index) => {
-              return <Boxes key = {index} winner = {player}/>   
+              return <Boxes key = {index} winner = {player} name = {this.state.names[index]}/>   
           })}
         </View>
         <Button 
           onPress = {this.shuffle} 
           label = "LET'S PLAY !!" 
-          count = {this.state.count}
+          subLabel = {this.state.count}
         />
       </View>
     );
