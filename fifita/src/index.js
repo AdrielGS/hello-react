@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import Boxes from './boxes'
 
 export default class Index extends React.Component {
   constructor(props) {
@@ -25,25 +26,18 @@ export default class Index extends React.Component {
       <View>
         <View style = {styles.outerContainer}>
           {this.state.players.map((player, index) => {
-              if(player)
-                return <Boxes key = {index} bkgColor = {styles.winner}/>   
-              else 
-                return <Boxes key = {index}/>   
+              return <Boxes key = {index} winner = {player}/>   
           })}
         </View>
         <View style = {styles.container}>
           <TouchableOpacity style = {styles.button} onPress = {this.shuffle}>
-            <Text style = {{color: 'white'}}> LET'S PLAY </Text>
-            <Text style = {{color: 'white'}}> {this.state.count} </Text>
+            <Text style = {styles.label}> LET'S PLAY !!! </Text>
+            <Text style = {styles.label}> {this.state.count} </Text>
           </TouchableOpacity>      
         </View>
       </View>
     );
   }
-}
-
-const Boxes = ({bkgColor}) => {
-  return <View style = {[styles.boxes, bkgColor ]} />;
 }
 
 const styles = StyleSheet.create({
@@ -61,17 +55,12 @@ const styles = StyleSheet.create({
     marginTop: 50,
     marginHorizontal: 20
   },
-  boxes: {
-    width: 70,
-    height: 70,  
-    backgroundColor: 'gray'
-  },
-  winner: {
-    backgroundColor: '#01C30C'    
-  },
   button: {
     backgroundColor: 'black',
     padding: 50,
     alignItems: 'center'
+  },
+  label: {
+    color: 'white'
   }
 });
