@@ -23,18 +23,29 @@ export default class Index extends React.Component {
     });
   };
 
+  reset = () => {
+    this.setState({
+      players: [false, false, false],
+      count: 0
+    })
+  }
+
   render() {
     return (
-      <View>
-        <View style = {styles.container}>
+      <View style={styles.container}>
+        <View style = {styles.top}>
           {this.state.players.map((player, index) => {
               return <Boxes key = {index} winner = {player} name = {this.state.names[index]}/>   
           })}
         </View>
-        <Button 
+        <Button
           onPress = {this.shuffle} 
           label = "LET'S PLAY !!" 
           subLabel = {this.state.count}
+        />
+        <Button
+          onPress = {this.reset} 
+          label = "RESET"
         />
       </View>
     );
@@ -44,9 +55,13 @@ export default class Index extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10
+  },
+  top: {
+    flex: 0.2,
+    alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 50,
-    marginHorizontal: 20
+    justifyContent: 'space-around',
+    padding: 20
   }
 });

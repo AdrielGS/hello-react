@@ -21,6 +21,7 @@ export default class Demo extends Component {
 
  render() {
    return (
+    <View style={styles.window}>
      <View style={styles.container}>
        <TouchableOpacity
          style={styles.button}
@@ -30,19 +31,28 @@ export default class Demo extends Component {
        </TouchableOpacity>
        <View style={[styles.countContainer]}>
          <Text style={[styles.countText]}>
-            { this.state.count !== 0 ? this.state.count: null}
+            { this.state.count !== 0 ? this.state.count: 0}
           </Text>
         </View>
       </View>
+    </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  window: {
+    flex: 1,
+    borderColor: 'blue',
+    borderWidth: 20
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 10
+    paddingHorizontal: 10,
+    borderColor: 'green',
+    borderWidth: 20
+    
   },
   button: {
     alignItems: 'center',

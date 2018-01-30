@@ -2,30 +2,43 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 
 const Button = ({onPress, label, subLabel}) => {
-	
-	return (
-    <View style = {styles.container}>
-  	  <TouchableOpacity style = {styles.button} onPress = {onPress}>
-  	    <Text style = {styles.label}> {label} </Text>
-  	    <Text style = {styles.label}> {subLabel} </Text>
-  	  </TouchableOpacity>      
-  	</View>
-  );
+  
+  if(subLabel >= 0){
+
+    return (
+      <View style = {styles.container}>
+        <TouchableOpacity style = {styles.button} onPress = {onPress}>
+          <Text style = {styles.label}> {label} </Text>
+          <Text style = {styles.label}> {subLabel} </Text>
+        </TouchableOpacity>      
+      </View>
+    );
+
+  } else {
+
+    return (
+      <View style = {styles.container}>
+        <TouchableOpacity style = {styles.button} onPress = {onPress}>
+          <Text style = {styles.label}> {label} </Text>
+        </TouchableOpacity>      
+      </View>
+    );
+
+  }
 
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: 'black',
+    flex: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 300,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   button: {
     backgroundColor: 'black',
-    padding: 50,
+    paddingHorizontal: 50,
+    paddingVertical: 30,
     alignItems: 'center'
   },
   label: {
