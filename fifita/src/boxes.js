@@ -15,19 +15,13 @@ const Boxes = ({winner, name}) => {
 const styles = StyleSheet.create({
 
 	boxes: {
-		width: 70,
-		height: 70,  
-		backgroundColor: 'gray'
-	},
-	winner: {
-		backgroundColor: '#01C30C'    
+		backgroundColor: 'gray',
+    padding: 20,
+  },
+  winner: {
+    backgroundColor: '#01C30C'    
   },
   name: {
-    flex: 1,
-    padding: 10,
-    top: 15,
-    alignItems: 'center',
-    justifyContent: 'center',
     color: 'white'
   }
 
