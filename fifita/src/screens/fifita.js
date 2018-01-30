@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
-import Boxes from './boxes';
-import Button from './button';
+import Boxes from '../components/Boxes/boxes';
+import Button from '../components/Button/button';
 
-export default class Index extends React.Component {
+export default class Fifita extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
