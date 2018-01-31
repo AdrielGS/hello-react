@@ -43,15 +43,11 @@ export default class Demo extends Component {
 const styles = StyleSheet.create({
   window: {
     flex: 1,
-    borderColor: 'blue',
-    borderWidth: 20
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 10,
-    borderColor: 'green',
-    borderWidth: 20
     
   },
   button: {
