@@ -1,10 +1,8 @@
 import React from 'react';
-import Index from './src/index';
-import Demo from './demo';
+import { Screens } from './src/config/router';
 
 const App = () => {
-  return <Index/>
-  // return <Demo/>
+  return <Screens/>
 };
 
 export default App;
