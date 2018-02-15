@@ -6,7 +6,7 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up Main.js to start working on your app!</Text>
+        <Text>Open up 'Main.js' to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
       </View>
